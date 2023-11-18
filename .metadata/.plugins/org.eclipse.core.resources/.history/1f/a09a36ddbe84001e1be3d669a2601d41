@@ -1,0 +1,81 @@
+package cliente;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Usuario {
+	private String nome;
+	private String nacionalidade;
+	private String email;
+	private ArrayList<String> postagens;
+	private int quantidadeDePostagens;
+	private int pontuacao;
+	
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getNacionalidade() {
+		return nacionalidade;
+	}
+	public void setNacionalidade(String nacionalidade) {
+		this.nacionalidade = nacionalidade;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public int getQuantidadeDePostagens() {
+		return quantidadeDePostagens;
+	}
+	public int getPontuacao() {
+		return pontuacao;
+	}
+	
+	Usuario(String nome, String nacionalidade, String email){
+		this.nome = nome;
+		this.nacionalidade = nacionalidade;
+		this.email = email;
+		postagens = new ArrayList<String>();
+		this.quantidadeDePostagens = 0;
+		this.pontuacao = 0;
+	}
+	
+	public void adicionaPostagem(String post) {
+		postagens.add(post);
+		this.quantidadeDePostagens++;
+	}
+	
+	public void alteraPontuacao(int delta) {
+		
+		if(this.pontuacao + delta <= 0) {
+			this.pontuacao = 0;
+		}else {
+			this.pontuacao += delta;
+		}
+	}
+	
+	public static void main(String[] args) {
+		String nome, nacionalidade, email, postagem;
+		ArrayList<Usuario> listaUsuarios = new ArrayList<Usuario>();
+		Usuario usuario = new Usuario(nome, nacionalidade, email);
+		System.out.println("Digite uma postagem:");
+		postagem = sc.nextLine();
+		usuario.adicionaPostagem(postagem);
+		do {
+			System.out.println("Digite o nome do usuario: ");
+			Scanner sc = new Scanner(System.in);
+			nome = sc.nextLine();
+			System.out.println("Digite a nacionalidade do usuario: ");
+			nacionalidade = sc.nextLine();
+			System.out.println("Digite o email do usuario: ");
+			email = sc.nextLine();
+		}while();
+	}
+	
+}
