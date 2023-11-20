@@ -1,0 +1,92 @@
+Pesquise no Google e responda às perguntas abaixo.
+1. O que é uma classe em Java e qual é a diferença entre uma classe e um
+objeto? Dê 5 exemplos mostrando-os em C++ e em Java.
+
+R: Uma classe é uma estrutura que define comportamento e propriedades de objetos.
+É como um modelo em que os objetos são criados, contendo atributos (valores) e métodos.
+Já um objeto é uma instância de uma classe. Quando um objeto é criado, ele possui seus 
+valores individuais para seus atributos, além de se comportar conforme definido pelos métodos
+da classe.
+
+
+2. Como você declara uma variável em Java e quais são os tipos de dados
+primitivos mais comuns? Faça um paralelo entre isso e a mesma coisa na
+linguagem C++
+
+R: Em Java, as variáveis são declaradas seguindo o modelo "tipoDeDado nomeDaVariavel", e os 
+tipos de dados primitivos mais comuns são int, long, float, double, boolean e char.
+A declaração de variáveis em C++ é semelhante a Java, assim como os tipos primitivos mais comuns,
+mudando que em C++ temos long long. Fora isso, há diferenças sutis nos tipos de dados entre as 
+linguagens, onde em C++, o tamanho de dado suportado em alguns tipos pode variar dependendo 
+da arquitetura da máquina utilizada para executar o código, já em Java é seguido um padrão 
+próprio da linguagem que não é alterado.
+
+
+3. Explique o conceito de herança em Java e como você pode criar uma
+subclasse a partir de uma classe existente. Faça um paralelo com C++,
+apresentando 5 exemplos.
+
+R: Herança é um conceito importante em programação orientada a objetos, pois permite 
+que as subclasses herde características ou comportamentos de outra classe. Para implementar
+uma herança, deve ser utilizado a palavra-chave "Extends", já em C++ é usado ": public".
+Exemplo em Java:
+class Animal {
+	void emitirSom() {
+		System.out.println("Som");
+    	}
+}
+class Gato extends Animal{
+	void miar(){
+		System.out.println("Miado");
+	}
+}
+
+public static void main(String[] args) {
+        Gato gato = new Gato();
+
+        Gato.emitirSom(); // Herdado da classe Animal
+        Gato.miar();     // Próprio da classe Gato
+}
+
+
+Já em C++ ficaria:
+class Animal{
+public:
+	void emitirSom(){
+		cout << "Som"" << endl;
+	}
+
+}
+class Gato : public Animal {
+public:
+	void miar(){
+		cout << "Miado" << endl;
+	}
+}
+
+int main() {
+   
+    Gato gato;
+
+    
+    gato.emitirSom(); // Herdado da classe Animal
+    gato.miar();     // Próprio da classe Gato
+
+    return 0;
+}
+
+4. Quando declaramos uma variável em Java, temos, na verdade, um ponteiro.
+Em C++ é diferente. Discorra sobre esse aspecto. 
+
+R: Em Java, as variáveis de tipos de objetos são referências, mas 
+diferente de C/C++, você não possui acesso direto ao endereço de memória
+que está armazenando a variável em questão, o que também não permite a 
+manipulação de ponteiros observada em C/C++. Em Java, essas referências 
+são encapsuladas e mais seguras, evitando problemas recorrentes como 
+vazamento de memória, e utiliza um gerenciamento automático com o garbage 
+collector, que garante não haver memória referenciada sem uso no programa.
+Em C/C++ ponteiros podem ser usados para manipular a memória diretamente.
+permitindo mais controle do que está ocorrendo, mas também necessitando de
+muito mais responsabilidade e habilidade com o que está fazendo e em como
+está gerenciando a memória.
+
