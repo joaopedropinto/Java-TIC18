@@ -1,0 +1,33 @@
+package conversorTemp;
+
+import java.util.Scanner;
+
+public class ConversorTemp {
+	public static void main(String[] args){
+		double temp, resultado; 
+		int opcao;
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Digite a temperatura: ");
+		temp = sc.nextDouble();
+		System.out.println("Informe a unidade de origem:");
+		System.out.println("1- Celcius \n 2- Fahrenheit");
+		opcao = sc.nextInt();
+		if(opcao == 1) {
+			resultado = celsiusParaFahrenheit(temp);
+			System.out.println("A temperatura " + temp + "ºC em Fahrenheit é: " + resultado + "ºF");
+		}else if(opcao == 2) {
+			resultado = fahrenheitParaCelsius(temp);
+			System.out.println("A temperatura " + temp + "ºF em Celcius é: " + resultado + "ºC");
+		}else {
+			System.out.println("Opção inválida!");
+		}
+	}
+	
+	private static double celsiusParaFahrenheit(double celsius) {
+        return (celsius * 9 / 5) + 32;
+    }
+
+    private static double fahrenheitParaCelsius(double fahrenheit) {
+        return (fahrenheit - 32) * 5 / 9;
+    }
+}

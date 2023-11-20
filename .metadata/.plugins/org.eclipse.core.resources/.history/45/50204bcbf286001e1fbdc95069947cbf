@@ -39,6 +39,6 @@ public class Calculadora {
         	System.out.println("Opção inválida!");
         	return;
         }
-        System.out.println("O resultado da operação é: " + total);
+        System.out.println("O resultado da operação é: ", total);
 	}
 }
